@@ -24,25 +24,6 @@ element.scaleX = 2;
 element.scaleY = 3;
 ```
 
-### kmdjs兼容性写法
-这里拿transformjs作为例子，以后大家写模块的时候多加下面这几行代码，当耐特在这里谢谢大家了
-
-```javascript
-    if (typeof module != 'undefined' && module.exports && this.module !== module) { module.exports = transform }
-    else if (typeof define === 'function' && define.amd) { define(transform) }
-        //export to kmd project，以后大家写模块的时候多加下面这几行代码，当耐特在这里谢谢大家了
-    else if (typeof define === 'function' && define.kmd) {
-        define("observable", __class.export[0]);
-        define("matrix2D", __class.export[1]);
-        define("transform", __class.export[2]);
-        //you can also add any namespace to observable such as blow code:
-        //define("util.matrix2D", __class.export[1]);
-        //define("base.observable", __class.export[0]);
-        //note: why not   'define("base.transform", ["util","base"], __class.export[2]);'?because transform belong to base, so "base" need not to write.
-        //define("base.transform", ["util"], __class.export[2]);
-    }
-    else { win.transform = transform };
-```
 
 ##在线演示
 http://htmlcssjs.duapp.com/transformjs/
