@@ -23,10 +23,25 @@ element.rotation++;
 element.scaleX = 2;
 element.scaleY = 3;
 ```
+当然还可以设置诸如：x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY等属性。
+>其中x对应translateX、y对应translateY、rotation对应rotateZ，regX和regY相当于设置transform-origin。其余属性和transform一致。目前不支持3d
+
+##transform.js原理
+transformjs依赖 [observablejs](https://github.com/kmdjs/kmdjs/tree/master/observablejs)用于响应属性改变，自动更新元素显示状态。
+transformjs依赖 matrix2D用于将元素的transform属性转换为2*3的矩阵，然后赋值给dom的style的transform属性。见核心代码：
+```javascript
+observer.propertyChangedHandler = function () {
+    var mtx = self.element.matrix2D.identity().appendTransform(self.element.x, self.element.y, self.element.scaleX, self.element.scaleY, self.element.rotation, self.element.skewX, self.element.skewY, self.element.regX, self.element.regY);
+    self.element.style.transform = self.element.style.msTransform = self.element.style.OTransform = self.element.style.MozTransform = self.element.style.webkitTransform = "matrix(" + [mtx.a, mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty].join(",") + ")";
+}
+```
 
 
 ##在线演示
 http://htmlcssjs.duapp.com/transformjs/
+
+##Github
+https://github.com/kmdjs/kmdjs
 
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
