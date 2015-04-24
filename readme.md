@@ -38,10 +38,8 @@ observer.propertyChangedHandler = function () {
 
 
 ##在线演示
-http://htmlcssjs.duapp.com/transformjs/
+http://kmdjs.org
 
-##Github
-https://github.com/kmdjs/kmdjs
 
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
