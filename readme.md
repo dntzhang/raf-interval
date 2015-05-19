@@ -27,7 +27,7 @@ element.scaleY = 3;
 >其中x对应translateX、y对应translateY、rotation对应rotateZ，regX和regY相当于设置transform-origin。其余属性和transform一致。目前不支持3d
 
 ##transform.js原理
-transformjs依赖 [observablejs](https://github.com/kmdjs/observablejs)用于响应属性改变，自动更新元素显示状态。
+transformjs依赖 [observejs](https://github.com/kmdjs/observejs)用于响应属性改变，自动更新元素显示状态。
 transformjs依赖 matrix2D用于将元素的transform属性转换为2*3的矩阵，然后赋值给dom的style的transform属性。见核心代码：
 ```javascript
 observer.propertyChangedHandler = function () {
