@@ -1,4 +1,8 @@
-﻿##写在前面
+
+##在线演示
+http://kmdjs.github.io/transformjs/
+
+##写在前面
 transform是css3新增的一个属性,可是令开发者费解的是，其内部又有大量的属性如旋转、缩放、扭曲、平移，这也就导致了获取或者是设置transform中一个或者多个属性变得异常麻烦。
 
 ##transform.js意义
@@ -35,10 +39,6 @@ observer.propertyChangedHandler = function () {
     self.element.style.transform = self.element.style.msTransform = self.element.style.OTransform = self.element.style.MozTransform = self.element.style.webkitTransform = "matrix(" + [mtx.a, mtx.b, mtx.c, mtx.d, mtx.tx, mtx.ty].join(",") + ")";
 }
 ```
-
-
-##在线演示
-http://kmdjs.github.io/transformjs/
 
 
 ##有问题反馈
