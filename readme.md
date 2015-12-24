@@ -21,7 +21,7 @@ transform是css3新增的一个属性,可是令开发者费解的是，其内部
 ```javascript
 var element = document.querySelector("#testTransform");
 //只需这一行代码
-transform.mix(element);
+Transform(element);
 //element就能够72变
 element.rotation++;
 element.scaleX = 2;
