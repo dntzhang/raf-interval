@@ -1,4 +1,4 @@
-﻿; (function () {
+; (function () {
 
     var matrix3D = function (n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, n41, n42, n43, n44) {
 
@@ -42,10 +42,6 @@
            );
 
             return this;
-        },
-        append: function (m) {
-            return this.multiplyMatrices(this, m);
-
         },
         multiplyMatrices: function (a, b) {
 
@@ -99,21 +95,21 @@
             var cosz = Math.cos(rz * -1);
             var sinz = Math.sin(rz * -1);
 
-            this.append(new matrix3D(
+            this.multiplyMatrices(this,new matrix3D(
                 cosy, 0, siny, x,
                 0, 1, 0, y,
                 -siny, 0, cosy, z,
                 siny / perspective, 0, -cosy / perspective, (perspective - z) / perspective
             ));
 
-            this.append(new matrix3D(
+            this.multiplyMatrices(this, new matrix3D(
                 1, 0, 0, 0,
                 0, cosx, sinx, 0,
                 0, -sinx, cosx, 0,
                 0, sinx / perspective, -cosx / perspective, 1
             ));
 
-            this.append(new matrix3D(
+            this.multiplyMatrices(this, new matrix3D(
                 cosz * scaleX, sinz * scaleY, 0, 0,
                -sinz * scaleX, cosz * scaleY, 0, 0,
                 0, 0, 1 * scaleZ, 0,
