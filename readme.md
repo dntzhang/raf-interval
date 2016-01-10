@@ -9,7 +9,7 @@ transform是css3新增的一个属性,可是令开发者费解的是，其内部
 
 * 让前端没有难做的特效
 * 告别style.xxxTransform= "xxx(xxdeg) xxx(xxx) "
-* 直接element.scaleX=0.5，element.ratation=30.....,更加pure和友好;
+* 直接element.scaleX=0.5，element.ratateZ=30.....,更加pure和友好;
 * 自动更新元素的显示状态
 
 当然这里transformjs没有提供诸如:animate({scaleX:2,ratation:60},500)的方法，开发者可以基于transform.js自行去封装，transformjs都这么便利了，结合tween也好，或者利用transition也好，封装一个animate方法应该非常简单。说白了，transformjs只负责让开发者通过简单的赋值操作，让dom变化。
