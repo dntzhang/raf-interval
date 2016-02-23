@@ -27,8 +27,8 @@ element.rotateZ++;
 element.scaleX = 2;
 element.scaleY = 3;
 ```
-当然还可以设置诸如：translateX, translateY, translateZ,rotateX,rotateY,rotateZ,scaleX, scaleY, scaleZ, regX, regY等属性。
->其中regX和regY相当于设置transform-origin。其余属性和transform一致。目前尚不支持skew。
+当然还可以设置诸如：translateX, translateY, translateZ,rotateX,rotateY,rotateZ,scaleX, scaleY, scaleZ, originX, originY等属性。
+>其中originX和originY相当于设置transform-origin。其余属性和transform一致。目前尚不支持skew。
 
 ##有问题反馈
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流

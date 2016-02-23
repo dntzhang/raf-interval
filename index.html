@@ -64,10 +64,10 @@
 
         var element8 = document.querySelector("#test8");
         Transform(element8);
-        element8.regZ = -150;
+        element8.originZ = -150;
 
-        element4.regX = -50;
-        element4.regY = -50;
+        element4.originX = -50;
+        element4.originY = -50;
 
         var step = 0.02, xStep = 3;
         setInterval(function () {
@@ -81,9 +81,9 @@
             element5.rotateY++;
             element5.rotateX++;
             
-            element7.x < -50 && (xStep *= -1);
-            element7.x > 50 && (xStep *= -1);
-            element7.x += xStep;
+            element7.translateX < -50 && (xStep *= -1);
+            element7.translateX > 50 && (xStep *= -1);
+            element7.translateX += xStep;
             element6.scaleX < 0.5 && (step *= -1);
             element6.scaleX > 1.5 && (step *= -1);
             element6.scaleX += step;
