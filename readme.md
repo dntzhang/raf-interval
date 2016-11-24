@@ -1,9 +1,1 @@
-##API
-
-```js
-Transform(domElement);
-
-domElement.translateX = 100;
-domElement.scaleX = 0.5;
-domElement.originX = 0.5;
-```
+transformjs have been moved to here https://github.com/AlloyTeam/AlloyTouch/tree/master/transformjs
