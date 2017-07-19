@@ -1,7 +1,8 @@
-/**
- * Created by dntzhang on 2017/7/13.
+/*!
+ *  raf-interval v0.1.0 By dntzhang
+ *  Github: https://github.com/dntzhang/raf-interval
+ *  MIT Licensed.
  */
-
 ;(function() {
 
     var queue = [],
@@ -31,7 +32,6 @@
     window.clearRafInterval = function (id) {
         var i = 0,
             len = queue.length
-
 
         for (; i < len; i++) {
             if (id === queue[i].id) {
