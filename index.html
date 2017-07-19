@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>raf-interval</title>
+</head>
+<body>
+    <script src="raf-interval.js"></script>
+    <script>
+        var i = 0
+        var rafInterval = setRafInterval(function() {
+            console.log(i++)
+            if (i > 6) {
+                clearRafInterval(rafInterval)
+            }
+        },1000)
+
+        var j = 0
+        var interval = setInterval(function() {
+            console.log(j++)
+            if (j > 6) {
+                clearInterval(interval)
+            }
+        },1000)
+
+    </script>
+</body>
+</html>

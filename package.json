@@ -1,0 +1,27 @@
+{
+  "name": "raf-interval",
+  "version": "0.1.0",
+  "description": "setRafInterval and clearRafInterval with requestAnimationFrame.",
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlloyTeam/raf-interval.git"
+  },
+  "keywords": [
+    "pasition",
+    "path",
+	"svg",
+	"canvas"
+  ],
+  "author": "dntzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlloyTeam/raf-interval/issues/new"
+  },
+  "homepage": "http://alloyteam.github.io/raf-interval"
+}
