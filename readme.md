@@ -2,20 +2,7 @@
 
 setRafInterval and clearRafInterval with requestAnimationFrame.
 
-# features
-
-* Support setRafInterval and clearRafInterval like setInterval and clearInterval
-* Automatically stops when the user switches to a different tab
-* High performance animation with simple API
-* Automatic stop the loop when it is not needed 
-
-# install 
-
-```
-$ npm install raf-interval
-```
-
-# usage
+# Usage
 
 before raf-interval:
 
@@ -40,6 +27,21 @@ var rafInterval = setRafInterval(function() {
     }
 },1000)
 ```
+
+# Features
+
+* Support setRafInterval and clearRafInterval like setInterval and clearInterval
+* Automatically stops when the user switches to a different tab
+* High performance animation with simple API
+* Automatic stop the loop when it is not needed 
+
+# Install 
+
+```
+$ npm install raf-interval
+```
+
+
 
 # License
 
