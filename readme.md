@@ -41,6 +41,9 @@ var rafInterval = setRafInterval(function() {
 $ npm install raf-interval
 ```
 
+or get it by CDN:
+
+*[https://unpkg.com/raf-interval@0.1.0/raf-interval.js](https://unpkg.com/raf-interval@0.1.0/raf-interval.js)
 
 
 # License
