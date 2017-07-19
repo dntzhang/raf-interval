@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlloyTeam/raf-interval.git"
+    "url": "git+https://github.com/dntzhang/raf-interval.git"
   },
   "keywords": [
     "pasition",
@@ -21,7 +21,7 @@
   "author": "dntzhang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlloyTeam/raf-interval/issues/new"
+    "url": "https://github.com/dntzhang/raf-interval/issues/new"
   },
-  "homepage": "http://alloyteam.github.io/raf-interval"
+  "homepage": "https://dntzhang.github.io/raf-interval"
 }

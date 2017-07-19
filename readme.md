@@ -6,7 +6,7 @@ setRafInterval and clearRafInterval with requestAnimationFrame.
 
 before raf-interval:
 
-```
+```js
 var i = 0
 var interval = setInterval(function() {
     console.log(i++)
@@ -18,7 +18,7 @@ var interval = setInterval(function() {
 
 after raf-interval:
 
-```
+```js
 var i = 0
 var rafInterval = setRafInterval(function() {
     console.log(i++)
