@@ -1,5 +1,5 @@
 /*!
- *  raf-interval v0.2.0 By dntzhang
+ *  raf-interval v0.3.0 By dntzhang
  *  Github: https://github.com/dntzhang/raf-interval
  *  MIT Licensed.
  */
@@ -15,7 +15,34 @@
         id = -1,
         ticking = false,
         tickId = null,
-        now = Date.now
+        now = Date.now,
+        lastTime = 0,
+        vendors = ['ms', 'moz', 'webkit', 'o'],
+        x = 0
+
+    for (; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame']
+        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame']
+            || window[vendors[x] + 'CancelRequestAnimationFrame']
+    }
+
+    if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = function (callback, element) {
+            var currTime = now()
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime))
+            var id = window.setTimeout(function () {
+                callback(currTime + timeToCall)
+            }, timeToCall)
+            lastTime = currTime + timeToCall
+            return id
+        }
+    }
+
+    if (!window.cancelAnimationFrame) {
+        window.cancelAnimationFrame = function (id) {
+            clearTimeout(id)
+        }
+    }
 
     window.setRafInterval = function (fn, interval) {
         id++
@@ -23,7 +50,7 @@
         if (!ticking) {
             var tick = function () {
                 tickId = requestAnimationFrame(tick)
-                queue.forEach(function (item) {
+                each(queue, function (item) {
                     if (item.interval < 17 || now() - item.lastTime >= item.interval) {
                         item.fn()
                         item.lastTime = now()
@@ -50,6 +77,18 @@
         if (queue.length === 0) {
             cancelAnimationFrame(tickId)
             ticking = false
+        }
+    }
+
+    function each(arr, fn){
+        if(Array.prototype.forEach){
+            arr.forEach(fn)
+        }else{
+            var i= 0,
+                len=arr.length
+            for (; i < len; i++) {
+                fn(arr[i],i)
+            }
         }
     }
 })();
