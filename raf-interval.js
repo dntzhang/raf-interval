@@ -1,25 +1,32 @@
 /*!
- *  raf-interval v0.1.0 By dntzhang
+ *  raf-interval v0.2.0 By dntzhang
  *  Github: https://github.com/dntzhang/raf-interval
  *  MIT Licensed.
  */
 ;(function() {
 
+    if (!Date.now) {
+        Date.now = function now() {
+            return new Date().getTime()
+        }
+    }
+
     var queue = [],
         id = -1,
         ticking = false,
-        tickId = null
+        tickId = null,
+        now = Date.now
 
     window.setRafInterval = function (fn, interval) {
         id++
-        queue.push({id: id, fn: fn, interval: interval, lastTime: new Date()})
+        queue.push({id: id, fn: fn, interval: interval, lastTime: now()})
         if (!ticking) {
             var tick = function () {
                 tickId = requestAnimationFrame(tick)
                 queue.forEach(function (item) {
-                    if (item.interval < 17 || new Date - item.lastTime >= item.interval) {
+                    if (item.interval < 17 || now() - item.lastTime >= item.interval) {
                         item.fn()
-                        item.lastTime = new Date()
+                        item.lastTime = now()
                     }
                 })
             }
