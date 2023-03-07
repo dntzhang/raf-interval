@@ -2,6 +2,7 @@
   "name": "raf-interval",
   "version": "0.3.0",
   "description": "setRafInterval and clearRafInterval with requestAnimationFrame.",
+  "main": "raf-interval.js",
   "scripts": {
   },
   "dependencies": {
